@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from rest_framework.views import APIView
+from rest_framework.response import Response
 
-# Create your views here.
+class helloApiView (APIView):
+
+    def get(self, request, format=None):
+        api_view = ['get', 'push', 'delete']
+        return Response({'message':'Hello', 'item':api_view})
